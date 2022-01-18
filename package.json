@@ -1,0 +1,23 @@
+{
+  "name": "uno-dos-tres",
+  "version": "1.0.0",
+  "description": "Counting in spanish automated",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wistcc/uno-dos-tres.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wistcc/uno-dos-tres/issues"
+  },
+  "homepage": "https://github.com/wistcc/uno-dos-tres#readme",
+  "dependencies": {
+    "sox-audio": "^0.3.0"
+  }
+}
