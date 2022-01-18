@@ -210,8 +210,8 @@ const separateNumberIntoUnits = (number) => {
 }
 
 const myArgs = process.argv.slice(2)
-const lowerBand = myArgs[0] || 1
-const upperBand = myArgs[1] || 100
+const lowerBand = parseInt(myArgs[0]) || 1
+const upperBand = parseInt(myArgs[1]) || 100
 const bulkSize = 100
 const outputFilesCommands = []
 let allCommands = []
@@ -259,7 +259,7 @@ for (let i=lowerBand; i <= upperBand; i++) {
       }
 
       // choosing 'ciento' instead of 'cien'
-      if (number === 100 && currentLength > 1) {
+      if (number === 100 && index !== (currentLength - 1)) {
         number = '100*'
       }
       // combining the digit with the 'ciento' audio
@@ -331,9 +331,9 @@ if (allCommands.length) {
 console.log('Executing commands...')
 
 const executeCommand = (index) => {
-  // this loops helps to execute up to 3 final commands at a time
-  // making the whole process 3 times faster
-  for (let i = 0; i < 3; i++) {
+  // this loops helps to execute up to 2 final commands at a time
+  // making the whole process 2 times faster
+  for (let i = 0; i < 2; i++) {
     const currentIndex = index + i
     lastIndex = currentIndex
     if (currentIndex >= finalCommands.length) break;
@@ -355,7 +355,7 @@ const executeCommand = (index) => {
       fs.readdir(outputDirectory, (err, files) => {
         if ((files.length - 1) === lastIndex) {
           // executing next command after the previous is done
-          executeCommand(lastIndex)
+          executeCommand(lastIndex + 1)
         }
       });
     })
@@ -372,12 +372,13 @@ let index = 0
 let lastIndex = finalCommands.length
 executeCommand(index)
 
+const quantity = upperBand - lowerBand + 1
 const defaultIntervalTime = 30000
-const possibleIntervalTime = 100 * upperBand
+const possibleIntervalTime = 100 * quantity
 const intervalTime = possibleIntervalTime < defaultIntervalTime ? possibleIntervalTime : defaultIntervalTime
 const interval = setInterval(() => {
-  console.log('************** Final check **************', outputFilesCommands.length, Math.round(upperBand / bulkSize))
-  if (outputFilesCommands.length === Math.round(upperBand / bulkSize)) {
+  console.log('************** Final check **************', outputFilesCommands.length, Math.ceil(quantity / bulkSize))
+  if (outputFilesCommands.length === Math.ceil(quantity / bulkSize)) {
     clearInterval(interval)
     console.log('-------- Executing final command --------')
     let finalCommand = SoxCommand()
