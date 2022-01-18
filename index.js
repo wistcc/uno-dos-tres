@@ -6,174 +6,164 @@ const commands = {
   1: SoxCommand()
       .input('./assets/1.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      // short fade in was needed to remove void between files when concat
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   2: SoxCommand()
       .input('./assets/2.mp3')
       .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   3:  SoxCommand()
       .input('./assets/3.mp3')
       .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   4:  SoxCommand()
       .input('./assets/4.mp3')
       .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   5: SoxCommand()
       .input('./assets/5.mp3')
       .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   6: SoxCommand()
       .input('./assets/6.mp3')
       .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   7: SoxCommand()
       .input('./assets/7.mp3')
       .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   8: SoxCommand()
       .input('./assets/8.mp3')
       .output('-p')
-      .trim(0.3, 0.8)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   9: SoxCommand()
       .input('./assets/9.mp3')
       .output('-p')
-      .trim(0.2, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0.1, 0.5),
   10: SoxCommand()
       .input('./assets/10.mp3')
-      .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .output('-p'),
   11: SoxCommand()
-      .input('./assets/11.mp3')
-      .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .input('-v 0.8 ./assets/11.mp3')
+      .output('-p'),
   12: SoxCommand()
       .input('./assets/12.mp3')
-      .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .output('-p'),
   13: SoxCommand()
       .input('./assets/13.mp3')
-      .output('-p')
-      .trim(0.3, 0.9)
-      .addEffect('fade', ['0.05']),
+      .output('-p'),
   14: SoxCommand()
-      .input('./assets/14.mp3')
-      .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .input('-v 0.8 ./assets/14.mp3')
+      .output('-p'),
   15: SoxCommand()
-        .input('./assets/15.mp3')
-        .output('-p')
-        .trim(0.1, 0.9)
-        .addEffect('fade', ['0.05']),
+      .input('./assets/15.mp3')
+      .output('-p'),
   16: SoxCommand()
-      .input('./assets/16.mp3')
-      .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .input('-v 0.8 ./assets/16.mp3')
+      .output('-p'),
   17: SoxCommand()
-      .input('./assets/17.mp3')
-      .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .input('-v 0.8 ./assets/17.mp3')
+      .output('-p'),
   18: SoxCommand()
-      .input('./assets/18.mp3')
-      .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .input('-v 0.8 ./assets/18.mp3')
+      .output('-p'),
   19: SoxCommand()
-      .input('./assets/19.mp3')
-      .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .input('-v 0.8 ./assets/19.mp3')
+      .output('-p'),
   20: SoxCommand()
       .input('./assets/20.mp3')
-      .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .output('-p'),
+  '20-': SoxCommand()
+      .input('-v 0.7 ./assets/20-.mp3')
+      .output('-p'),
   30: SoxCommand()
-        .input('./assets/30.mp3')
-        .output('-p')
-        .trim(0.1, 0.7)
-        .addEffect('fade', ['0.05']),
+      .input('./assets/30.mp3')
+      .output('-p'),
+  '30-': SoxCommand()
+      .input('-v 1.1 ./assets/30-.mp3')
+      .output('-p'),
   40: SoxCommand()
-        .input('./assets/40.mp3')
-        .output('-p')
-        .trim(0.1, 0.7)
-        .addEffect('fade', ['0.05']),
+      .input('./assets/40.mp3')
+      .output('-p'),
+  '40-': SoxCommand()
+      .input('-v 1.1 ./assets/40-.mp3')
+      .output('-p'),
   50: SoxCommand()
       .input('./assets/50.mp3')
+      .output('-p'),
+  '50-': SoxCommand()
+      .input('-v 0.7 ./assets/50-.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0, 0.7),
   60: SoxCommand()
       .input('./assets/60.mp3')
+      .output('-p'),
+  '60-': SoxCommand()
+      .input('-v 0.6 ./assets/60-.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0, 0.7),
   70: SoxCommand()
       .input('./assets/70.mp3')
-      .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .output('-p'),
+  '70-': SoxCommand()
+      .input('-v 0.8 ./assets/70-.mp3')
+      .output('-p'),
   80: SoxCommand()
       .input('./assets/80.mp3')
+      .output('-p'),
+  '80-': SoxCommand()
+      .input('-v 0.7 ./assets/80-.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0, 0.65),
   90: SoxCommand()
-        .input('./assets/90.mp3')
-        .output('-p')
-        .trim(0.1, 0.8)
-        .addEffect('fade', ['0.05']),
+      .input('./assets/90.mp3')
+      .output('-p'),
+  '90-': SoxCommand()
+      .input('-v 0.7 ./assets/90-.mp3')
+      .output('-p')
+      .trim(0, 0.6),
   100: SoxCommand()
       .input('./assets/100.mp3')
+      .output('-p'),
+  '100-': SoxCommand()
+      .input('./assets/100-.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
-  '100*': SoxCommand()
-      .input('./assets/100*.mp3')
+      .trim(0, 0.6),
+  200: SoxCommand()
+      .input('-v 0.9 ./assets/200.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0, 0.75),
+  300: SoxCommand()
+      .input('-v 0.8 ./assets/300.mp3')
+      .output('-p')
+      .trim(0, 0.75),
+  400: SoxCommand()
+      .input('-v 0.6 ./assets/400.mp3')
+      .output('-p')
+      .trim(0, 0.75),
   500: SoxCommand()
-      .input('./assets/500.mp3')
+      .input('-v 0.8 ./assets/500.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0, 0.75),
+  600: SoxCommand()
+      .input('-v 0.8 ./assets/600.mp3')
+      .output('-p')
+      .trim(0, 0.75),
   700: SoxCommand()
-      .input('./assets/700.mp3')
+      .input('-v 0.6 ./assets/700.mp3')
       .output('-p')
-      .trim(0.1, 0.9)
-      .addEffect('fade', ['0.05']),
+      .trim(0, 0.85),
+  800: SoxCommand()
+      .input('-v 0.6 ./assets/800.mp3')
+      .output('-p')
+      .trim(0, 0.85),
   900: SoxCommand()
-        .input('./assets/900.mp3')
-        .output('-p')
-        .trim(0, 0.85)
-        .addEffect('fade', ['0.05']),
+      .input('-v 0.6 ./assets/900.mp3')
+      .output('-p')
+      .trim(0, 0.85),
   1000: SoxCommand()
-          .input('./assets/1000.mp3')
-          .output('-p')
-          .trim(0.1, 0.7)
-          .addEffect('fade', ['0.05']),
-  'y': SoxCommand()
-        .input('./assets/y.mp3')
-        .output('-p')
-        .trim(0.3, 06)
-        .addEffect('fade', ['0.05'])
+      .input('-v 1.1 ./assets/1000.mp3')
+      .output('-p')
+      .trim(0.15, 0.3),
 }
 
 const separateNumberIntoUnits = (number) => {
@@ -213,6 +203,7 @@ const myArgs = process.argv.slice(2)
 const lowerBand = parseInt(myArgs[0]) || 1
 const upperBand = parseInt(myArgs[1]) || 100
 const bulkSize = 100
+const quantity = upperBand - lowerBand + 1
 const outputFilesCommands = []
 let allCommands = []
 let finalCommands = []
@@ -244,7 +235,7 @@ const processCommands = (i) => {
 for (let i=lowerBand; i <= upperBand; i++) {
   const numbersToSay = separateNumberIntoUnits(i)
   const currentLength = numbersToSay.length
-  
+
   numbersToSay.forEach((number, index) => {
     // The number has only one  digit
     // or this is not the last digit
@@ -253,24 +244,12 @@ for (let i=lowerBand; i <= upperBand; i++) {
       index < (currentLength - 1) ||
       (index === (currentLength - 1) && number !== 0)) {
 
-      // adding the conjunction when needed
-      if (numbersToSay.length > 1 && numbersToSay[index-1] < 100 && index === (currentLength - 1) && number < 10) {
-        allCommands.push(commands['y'])
+      if (index !== (currentLength - 1) && [20, 30, 40, 50, 60, 70, 80, 90].includes(number)) {
+        number = `${number}-`
       }
-
       // choosing 'ciento' instead of 'cien'
-      if (number === 100 && index !== (currentLength - 1)) {
-        number = '100*'
-      }
-      // combining the digit with the 'ciento' audio
-      else  if (number === 200 ||
-        number === 300 ||
-        number === 400 ||
-        number === 600 ||
-        number === 800) {
-        const currentNumber = parseInt(number.toString()[0])
-        allCommands.push(commands[currentNumber])
-        number = '100*'
+      else if (number === 100 && index !== (currentLength - 1)) {
+        number = '100-'
       }
       // making sure we choose the predefined audio for these specific numbers 2-9
       else if (number >= 2000 && number < 10000) {
@@ -280,13 +259,7 @@ for (let i=lowerBand; i <= upperBand; i++) {
       }
       // making sure we choose the predefined audio for these specific numbers 10-19, 20, 30...
       else if (number >= 10000 && number <= 20000 ||
-          number === 30000 ||
-          number === 40000 ||
-          number === 50000 ||
-          number === 60000 ||
-          number === 70000 ||
-          number === 80000 ||
-          number === 90000) {
+        [30000, 40000, 50000, 60000, 70000, 80000, 90000].includes(number)) {
         const currentNumber = parseInt(number.toString()[0] + number.toString()[1])
         allCommands.push(commands[currentNumber])
         number = 1000
@@ -315,7 +288,7 @@ for (let i=lowerBand; i <= upperBand; i++) {
   });
 
   // dividing output in chunks
-  if (i % bulkSize === 0) {
+  if (i % bulkSize === 0 && quantity > bulkSize) {
     console.log(`Concatenating sequence after ${i}`)
     processCommands(i)
     allCommands = []
@@ -344,7 +317,7 @@ const executeCommand = (index) => {
         outputFilesCommands.push({
           name: finalCommands[currentIndex].name,
           command: SoxCommand()
-            .input(finalCommands[currentIndex].name)
+            .input(`-v 6 ${finalCommands[currentIndex].name}`)
             .output('-p')
         })
       }
@@ -372,7 +345,6 @@ let index = 0
 let lastIndex = finalCommands.length
 executeCommand(index)
 
-const quantity = upperBand - lowerBand + 1
 const defaultIntervalTime = 30000
 const possibleIntervalTime = 100 * quantity
 const intervalTime = possibleIntervalTime < defaultIntervalTime ? possibleIntervalTime : defaultIntervalTime
