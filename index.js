@@ -267,12 +267,19 @@ for (let i=lowerBand; i <= upperBand; i++) {
       // if it is on the ten thousands we need to separate the 2 digits to be pronounced
       else if (number >= 21000 && number <= 99000) {
         let currentNumber = parseInt(number.toString()[0]) * 10
-        allCommands.push(commands[currentNumber])
-
-        allCommands.push(commands['y'])
+        allCommands.push(commands[`${currentNumber}-`])
 
         currentNumber = parseInt(number.toString()[1])
-        allCommands.push(commands[currentNumber])
+
+        if (currentNumber === 1) {
+          // to be able to say 'un' instead of 'uno'
+          allCommands.push(
+            commands[currentNumber].trim(0, 0.15)
+          )
+        } else {
+          allCommands.push(commands[currentNumber])
+        }
+
         number = 1000
       }
       // just counting until 100,000
@@ -317,7 +324,7 @@ const executeCommand = (index) => {
         outputFilesCommands.push({
           name: finalCommands[currentIndex].name,
           command: SoxCommand()
-            .input(`-v 6 ${finalCommands[currentIndex].name}`)
+            .input(`-v 30 ${finalCommands[currentIndex].name}`)
             .output('-p')
         })
       }
